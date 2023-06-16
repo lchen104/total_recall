@@ -133,7 +133,7 @@ console.log('Name' === 'Name');
 
 console.log(true || false);
 console.log(false && false && false && false && false || true);
-console.log(false === false)
+console.log(false === false);
 console.log(e === 'Kevin');
 console.log(a + b = c); // note: a < b < c is NOT CORRECT (and is not a valid JS expression, think about using other math operations)`
 console.log(a * a = d); // note: the answer is a simple arithmetic equation, not something "weird"`
@@ -704,14 +704,32 @@ for (let i = 0; i < user.friend.purchased.length; i++) {
 // ### G. Functions can operate on objects
 
 // Write a single function updateUserthat takes no parameters. When the function is run, it should:
+user.friend = {
+   name: "John Smith",
+   age: 21,
+   location: "New York",
+   purchased: [],
+   
+   // start of single function added to the user object below
+   updateUser: function() {
+      user.friend.age++;
+   }
+   // end of single function added to the object
+}
 
 // 1. it should increment the user's age by 1
+user.friend.updateUser();
+console.log(user.friend);
+
 // 2. make the user's name uppercase
+user.friend.name = user.friend.name.toUpperCase();
+console.log(user.friend.name);
+
 // 3. The function does not need a return statement, it will merely modify the user object.
 
 // Write a function oldAndLoudthat performs the exact same tasks as updateUser, but instead of hard-coding it to only work on our userobject, make it take a parameter person, and have it modify the object that is passed in as an argument when the function is called. Call your oldAndLoudfunction with useras the argument.
 
-
+/// ??????????
 
 
 
@@ -731,8 +749,18 @@ for (let i = 0; i < user.friend.purchased.length; i++) {
 // name
 // breed
 // age (a number)
+const cat1 = {
+   name: "Kitty",
+   breed: "siamese",
+   age: 3,
+}
+
 // console.log the cat's age
+console.log(cat1.age);
+
 // console.log the cat's breed
+console.log(cat1.breed);
+
 
 
 
@@ -744,6 +772,12 @@ for (let i = 0; i < user.friend.purchased.length; i++) {
 // breed
 // age (a number)
 
+const cat2 = {
+   name: "Smitty",
+   breed: "ragdoll",
+   age: 4
+}
+
 
 
 // 3. ### Combine Cats!
@@ -751,6 +785,11 @@ for (let i = 0; i < user.friend.purchased.length; i++) {
 // The cats are multiplying!
 
 // Write a function `combineCats` that has two parameters `mama`, and `papa`. The function will take two arguments -- each a cat object.
+function combineCats(mama, papa) {
+   console.log(mama, papa);
+}
+
+combineCats(cat1, cat2);
 
 // Pass cat1and cat2as arguments to the combineCatsfunction. The function should console.log them.
 
@@ -762,6 +801,9 @@ for (let i = 0; i < user.friend.purchased.length; i++) {
 
 // { name: "Jam", age: 45, breed: "Siamese" }
 // ```
+
+
+
 
 // This is to demonstrate that functions can take objects as arguments.
 
@@ -779,6 +821,7 @@ for (let i = 0; i < user.friend.purchased.length; i++) {
 //   }
 // );
 // ```
+combineCats({ name: "Craig", age: 20, breed: "unknown" }, { name: "Linda", age: 20, breed: "undefined" });
 
 // **Make it so the combineCats function will return a combination of the two incoming cats!**
 
@@ -794,7 +837,7 @@ for (let i = 0; i < user.friend.purchased.length; i++) {
 // Result:
 
 // This is to demonstrate that a function can return an object
-
+console.log(combineCats(cat1, cat2));
 
 
 // 4. ### Cat brain bender
@@ -808,9 +851,12 @@ for (let i = 0; i < user.friend.purchased.length; i++) {
 // What is the result of:
 
 // `console.log(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)));`
+console.log(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)));
 
 // Whoa . . .
 
 // The above console.log is two levels deep of combineCats.
 
 // - Write a console.log that is **three** levels deep of combineCats. combineCats should have two arguments, each which are combineCats, each which have two arguments, each which are combineCats.
+
+console.log(combineCats(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)), combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2))));
