@@ -11,7 +11,7 @@
 // let hello = `Hello, my name is ${yourName}`
 // console.log(hello);
 
-//BOOLEANS
+// //BOOLEANS
 
 // const a = 4; 
 // const b = 53; 
@@ -23,23 +23,23 @@
 // console.log(c > d); 
 // console.log('Name' == 'Name');
 
-//FOR THE NEXT TWO, USE ONLY && OR ||
+// //FOR THE NEXT TWO, USE ONLY && OR ||
 // console.log(true || false); 
 // console.log(false && false && false && false && false || true); 
-// console.log(false === false) 
+// console.log(false === false); 
 // console.log(e === 'Kevin'); 
 // console.log(a != b != c); // note: a < b < c is NOT CORRECT (and is not a valid JS expression, think about using other math operations) 
 // console.log(a == a || d); // note: the answer is a simple arithmetic equation, not something "weird" console.log(48 __ '48');
 
 
 //the Farm
-let animal = "cow";
+// let animal = "cow";
 
-const moo = (a) => {
-   return a.toLowerCase === "cow"? "mooooo" : "hey, that's not a cow"
-} 
+// const moo = (a) => {
+//    return a.toLowerCase === "cow"? "mooooo" : "hey, that's not a cow"
+// } 
 
-console.log(moo(animal));
+// console.log(moo(animal));
 //Driver's Ed
 
 //LOOPS
@@ -69,13 +69,13 @@ console.log(moo(animal));
 //////////////////////////// LEO START
 // ## Q + A
 // 1. How do we assign a value to a variable?
-let name = "Leo";
+let myName = "Leo";
 
 // 2. How do we change the value of a variable?
-name = "Mike";
+myName = "Mike";
 
 // 3. How do we assign an existing variable to a new variable?
-let newVar = oldVar;
+let newName = myName;
 
 // 4. Remind me, what are declare, assign, and define?
 
@@ -108,7 +108,6 @@ let newVar = oldVar;
 // - Change the value of secondVariableto any string.
 
 // What is the value of firstVariable?
-1
 
 // - Create a variable called yourName and set it equal to your name as a string. Then, write an expression that takes the string `"Hello, my name is "` and the variable yourName. 
 // ex output: Hello, my name is Jean Valjean
@@ -125,18 +124,19 @@ const c = 57;
 const d = 16;
 const e = 'Kevin';
  
-console.log(a !== b);
-console.log(c !== d);
-console.log('Name' === 'Name');
+console.log(a < b); 
+console.log(c > d); 
+console.log('Name' == 'Name');
   
 //   ### // FOR THE NEXT TWO, USE ONLY && OR ||
 
-console.log(true || false);
-console.log(false && false && false && false && false || true);
-console.log(false === false);
-console.log(e === 'Kevin');
-console.log(a + b = c); // note: a < b < c is NOT CORRECT (and is not a valid JS expression, think about using other math operations)`
-console.log(a * a = d); // note: the answer is a simple arithmetic equation, not something "weird"`
+console.log(true || false); 
+console.log(false && false && false && false && false || true); 
+console.log(false === false); 
+console.log(e === 'Kevin'); 
+console.log(a != b != c); // note: a < b < c is NOT CORRECT (and is not a valid JS expression, think about using other math operations) 
+console.log(a == a || d); // note: the answer is a simple arithmetic equation, not something "weird" console.log(48 __ '48');
+
 console.log(48 == '48');
 
 // ### The Farm 
@@ -145,7 +145,7 @@ console.log(48 == '48');
 let animal = "cow";
 
 // 2. Write code that will print out "mooooo" if the it is equal to cow
-if (animal === "cow) {
+if (animal === "cow") {
     console.log("mooooo");
 }
 
@@ -245,7 +245,7 @@ for (let i = 0; i < 101; i++) {
 
 // - Write code that will save the sum of all the numbers between 1 - 10 to a variable called `bank_account`.
 // - Check your work! Your `bank_account` should have $55 in it.
-let bank_account = 0; 
+var bank_account = 0; 
 for (let i = 0; i < 11; i++) {
     bank_account += i;
  }
@@ -253,7 +253,7 @@ for (let i = 0; i < 11; i++) {
 
 // You got a bonus! Your pay is now doubled each week. Write code that will save the sum of all the numbers between 1 - 100 multiplied by 2.
 // Check your work! Your `bank_account` should have $10,100 in it.
-let bank_account = 0; 
+var bank_account = 0; 
 for (let i = 0; i < 101; i++) {
     bank_account += i;
  }
@@ -281,6 +281,7 @@ const quotes = ["q1", "q2", "q3"];
 // ### C. Accessing elements
 // Given the following array `const randomThings = [1, 10, "Hello", true]`
 // - How do you access the 1st element in the array?
+const randomThings = [1, 10, "Hello", true]
 randomThings[0];
 
 // - Change the value of `"Hello"` to `"World"`
@@ -624,7 +625,7 @@ console.log(user);
 
 // You have decided to add your user's location to the data that you want to collect.
 user.location = "New Jersey";
-onsole.log(user);
+console.log(user);
 
 // - Without changing the original user object, add a new key locationto the object, and give it a value or some-or-other location (a string).
 
