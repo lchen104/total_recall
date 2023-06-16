@@ -291,6 +291,8 @@ console.log(randomThings[2]);
 
 // ### D. Change values
 // Given the following array const ourClass = ["Salty", "Zoom", "Sardine", "Slack", "Github"]
+const ourClass = ["Salty", "Zoom", "Sardine", "Slack", "Github"]
+
 // What would you write to access the 3rd element of the array?
 ourClass[2];
 
@@ -308,14 +310,30 @@ ourClass.push("Cloud City");
 // Note: You don't really need `.splice()` for these. You could use it, but there are simpler array methods that are more appropriate.
 
 // Given the following array: `const myArray = [5, 10, 500, 20]`
+const myArray = [5, 10, 500, 20];
 
 // - Add the string "Aegon"to the end of the array. Add another string of your choice to the end of the array.
-// - Remove the 5from the beginning of the array.
-// - Add the string "Bob Marley"to the beginning of the array.
-// - Remove the string of your choice from the end of the array.
-// - Reverse this array using `Array.prototype.reverse()`. 
-// - Did you mutate the array? What does mutate mean? Did the .reverse()method return anything?
+myArray.push("Aegon");
+console.log(myArray);
 
+// - Remove the 5 from the beginning of the array.
+myArray.shift();
+console.log(myArray);
+
+// - Add the string "Bob Marley"to the beginning of the array.
+myArray.unshift("Bob Marley");
+console.log(myArray);
+
+// - Remove the string of your choice from the end of the array.
+myArray.pop();
+console.log(myArray);
+
+// - Reverse this array using `Array.prototype.reverse()`. 
+myArray.reverse();
+console.log(myArray);
+
+// - Did you mutate the array? What does mutate mean? Did the .reverse()method return anything?
+// YES, reverse() function reversed the order of the items in the array.
 
 
 // ### F. Biggie Smalls
@@ -323,11 +341,14 @@ ourClass.push("Cloud City");
 // Create a variable that contains an integer.
 
 // Write an `if ... else` statement that:
-
 // - `console.log()s` "little number" if the number is entered is less than 100
 // - `console.log()s` "big number" if the number is greater than or equal to 100.
-
-
+let num = 0;
+if (num >= 100) {
+   console.log("Big number");
+} else {
+   console.log("Little number");
+}
 
 // ### G. Monkey in the Middle
 
@@ -336,22 +357,28 @@ ourClass.push("Cloud City");
 // 1. console.log()little numberif the number entered is less than 5.
 // 2. If the number entered is more than 10, log big number.
 // 3. Otherwise, log "monkey".
-
+if (num < 5) {
+   console.log("Little number");
+} else if (num > 10) {
+   console.log("Big number");
+} else {
+   console.log("monkey");
+}
 
 
 // ### H. What's in Your Closet?
 // Below, we've given you examples of Kristyn and Thom's closets modeled as data in JavaScript.
 
 // ```
-// const kristynsCloset = [
-//   "left shoe",
-//   "cowboy boots",
-//   "right sock",
-//   "GA hoodie",
-//   "green pants",
-//   "yellow knit hat",
-//   "marshmallow peeps"
-// ];
+const kristynsCloset = [
+  "left shoe",
+  "cowboy boots",
+  "right sock",
+  "GA hoodie",
+  "green pants",
+  "yellow knit hat",
+  "marshmallow peeps"
+];
 // ```
 // ```
 // {
@@ -363,46 +390,56 @@ ourClass.push("Cloud City");
 
 // `// Thom's closet is more complicated. Check out this nested data structure!!`
 // ```
-// const thomsCloset = [
-//   [
-//     // These are Thom's shirts
-//     "grey button-up",
-//     "dark grey button-up",
-//     "light blue button-up",
-//     "blue button-up",
-//   ],[
-//     // These are Thom's pants
-//     "grey jeans",
-//     "jeans",
-//     "PJs"
-//   ],[
-//     // Thom's accessories
-//     "wool mittens",
-//     "wool scarf",
-//     "raybans"
-//   ]
-// ];
+const thomsCloset = [
+  [
+    // These are Thom's shirts
+    "grey button-up",
+    "dark grey button-up",
+    "light blue button-up",
+    "blue button-up",
+  ],[
+    // These are Thom's pants
+    "grey jeans",
+    "jeans",
+    "PJs"
+  ],[
+    // Thom's accessories
+    "wool mittens",
+    "wool scarf",
+    "raybans"
+  ]
+];
 // ```
 
 // **What's Kristyn wearing today?**
 
 // 1. Using bracket notation to access items in kristynsCloset, log the sentence "Kristyn is rocking that " + the third item in Kristyn's closet + " today!" to the console.
-
+console.log("Kristyn is rocking that " + kristynsCloset[2] + " today!")
 
 // 2. Kristyn just bought some sweet shades! Add "raybans"to her closet after "yellow knit hat".
+kristynsCloset.splice(6, 0, "raybans");
+console.log(kristynsCloset);
+
 // Kristyn spilled coffee on her hat... modify this item to read "stained knit hat"instead of yellow.
+kristynsCloset[5] = "stained knit hat";
+console.log(kristynsCloset);
 
 // 3. Put together an outfit for Thom! Using bracket notation, access the first element in Thom's shirts array.
+thomsCloset[0][0];
+console.log(thomsCloset[0][0]);
 
 // **In the same way, access one item from Thom's pants array.**
+thomsCloset[1][0];
+console.log(thomsCloset[1][0]);
 
 // - Access one item from Thom's accessories array.
 // - Log a sentence about what Thom's wearing. 
 // *Example:* "Thom is looking fierce in a grey button-up, jeans and wool scarf!"
+console.log(`Thom is looking fierce in a ${thomsCloset[0][0]}, ${thomsCloset[1][0]} and ${thomsCloset[2][1]}!`);
 
 // - Get more specific about what kind of PJs Thom's wearing this winter. Modify the name of his PJ pants to Footie Pajamas.
-
-
+thomsCloset[1][3] = "Footie Pajamas";
+console.log(thomsCloset);
 
 // ## IV. Functions
 
@@ -419,6 +456,12 @@ ourClass.push("Cloud City");
 // You think you could? I think so too. Feel free to skip this problem, because you've already done it. If you've done the problem twice, read entire problems carefully before doing them from now on.
 
 
+function printGreeting(name) {
+    return `Hello, ${name}`;
+}
+
+console.log(printGreeting("Leo"));
+
 // ### B. printCool
 
 // Write a function `printCoolthat` accepts one parameter, `name`, as an argument. The function should print the name and a message saying that that person is cool.
@@ -426,7 +469,11 @@ ourClass.push("Cloud City");
 // `console.log(printCool("Captain Reynolds"));`
 // `=> "Captain Reynolds is cool";`
 
+function printCool(name) {
+   return `${name} is super cool!`;
+}
 
+console.log(printCool("Leo"));
 
 
 // ### C. calculateCube
@@ -435,7 +482,11 @@ ourClass.push("Cloud City");
 // `console.log(calculateCube(5));`
 // `=> 125`
 
+function calculateCube(num) {
+   return num = num * num * num;
+}
 
+console.log(calculateCube(5));
 
 
 // ## D. isVowel
@@ -449,6 +500,16 @@ ourClass.push("Cloud City");
 // `console.log(isVowel("a"));`
 // `=> true`
 
+function isVowel(letter) {
+   if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u" || letter === "y") {
+      return true;
+   } else {
+      return false;
+   }
+}
+
+console.log(isVowel("b"));
+
 
 
 
@@ -459,7 +520,12 @@ ourClass.push("Cloud City");
 // `console.log(getTwoLengths("Hank", "Hippopopalous"));`
 // `=> [4, 13]`
 
+function getTwoLengths(a, b) {
+   let arr = [a.length, b.length];
+   return arr;
+}
 
+getTwoLengths("Hank", "Hippopopalous");
 
 
 // ### F. getMultipleLengths
@@ -469,8 +535,15 @@ ourClass.push("Cloud City");
 // `console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));`
 // `=> [5, 4, 2, 2, 4]`
 
+function getMultipleLengths(arr) {
+   let newArr = [];
+   for (let i = 0; i < arr.length; i++) {
+      newArr[i] = arr[i].length;
+   }
+   return newArr;
+}
 
-
+console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
 
 // ### G. maxOfThree
 // Define a function maxOfThreethat takes three numbers as arguments and returns the largest of them. If all numbers are the same, it doesn't matter which one is returned. If the two largest numbers are the same, one of them should be returned. Be sure to test it with larger values in each of the three locations.
@@ -480,6 +553,17 @@ ourClass.push("Cloud City");
 
 // Did you use Google and find Math.max()? If so, great job! Very resourceful—keep looking stuff up! However, for this particular question, we need you to submit a solution that does not use Math.max().
 
+function maxOfThree(a, b, c) {
+   if (a >= b && a >= c) {
+      return a;
+   } else if (b >= c) {
+      return b;
+   } else {
+      return c;
+   }
+}
+
+console.log(maxOfThree(6, 9, 1));
 
 
 
@@ -489,8 +573,20 @@ ourClass.push("Cloud City");
 // console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
 // => "Peanutbutter"
 
+function printLongestWord(word) {
+   let maxLength = 0;
+   let maxWord = word[0]; 
+   for (let i = 0; i < word.length; i++) {
+      if (word[i].length >= maxLength) {
+         maxWord = word[i];
+         maxLength = word[i].length;
+         // console.log(`Maxword:${maxWord} - ${word[i]}:${word[i].length}`);
+      }
+   }
+   return maxWord;
+}
 
-
+console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
 
 // ## Objects
 
@@ -505,19 +601,30 @@ ourClass.push("Cloud City");
 
 // Write in to the object the **key-value** pairs for name, email, age, and purchased. Set the value of purchased to an empty array `[]`. Set the other values to whatever you would like.
 
-
+const user = {
+   email: "mike@gmail.com",
+   age: 50,
+   purchased: []
+}
+console.log(user);
 
 // ### B. Update the user
 
 // - Our user has changed his or her email address. Without changing the original user object, update the email value to a new email address.
+user.email = "michael@yahoo.com"
+console.log(user);
 
 // - Our user has had a birthday! Without changing the original user object, increment the agevalue using the postfix operator. Hint: age++
+user.age++;
+console.log(user);
 
 
 
 // ### C. Adding keys and values
 
 // You have decided to add your user's location to the data that you want to collect.
+user.location = "New Jersey";
+onsole.log(user);
 
 // - Without changing the original user object, add a new key locationto the object, and give it a value or some-or-other location (a string).
 
@@ -526,12 +633,17 @@ ourClass.push("Cloud City");
 // ### D. Shopaholic!
 
 // 1. Our user has purchased an item! They have purchased some "carbohydrates". Using `.push()`, add the string "carbohydrates" to the `purchasedarray`.
+user.purchased.push("carbohydrates");
+console.log(user.purchased);
 
 // 2. Our user has purchased an item! They have purchased some "peace of mind". Using .push(), add the string "peace of mind" to the `purchasedarray`.
+user.purchased.push("peace of mind");
+console.log(user.purchased);
 
 // 3. Our user has purchased an item! They have purchased some "Merino jodhpurs". Using `.push()`, add the string "Merino jodhpurs" to the `purchasedarray`.
 // Console.log just the "Merino jodhpurs" from the `purchasedarray`.
-
+user.purchased.push("Merino jodhpurs");
+console.log(user.purchased);
 
 
 // ### E. Object-within-object
@@ -550,20 +662,43 @@ ourClass.push("Cloud City");
 // When we console.log user, we would see the friend object added to our user object.
 
 // 1. Write a friendobject into your userobject and give the friend a name, age, location, and purchased array (empty for now)
+user.friend = {
+   name: "John Smith",
+   age: 21,
+   location: "New York",
+   purchased: []
+}
+console.log(user);
+
 // 2. Console.log just the friend's name
+console.log(user.friend.name);
+
 // 3. Console.log just the friend's location
+console.log(user.friend.location);
+
 // 4. CHANGE the friend's age to 55
+user.friend.age = 55;
+console.log(user.friend.age);
+
 // The friend has purchased "The One Ring". Use `.push()` to add "The One Ring" to the friend's `purchasedarray`.
 // 5. The friendhas purchased "A latte". Use .push()to add "A latte" to the friend's `purchasedarray`.
 // 6. Console.log just "A latte" from the friend's `purchasedarray`.
 
+user.friend.purchased.push("The One Ring");
+console.log(user.friend.purchased);
 
 
 // ### F. Loops
 
 // - Write a for loop that iterates over the User's `purchasedarray` (NOT the friend's purchased array), and prints each element to the console.
-// - Write a for loop that iterates over the Friend's `purchasedarray`, and prints each element to the console.
+for (let i = 0; i < user.purchased.length; i++) {
+   console.log(user.purchased[i]);
+}
 
+// - Write a for loop that iterates over the Friend's `purchasedarray`, and prints each element to the console.
+for (let i = 0; i < user.friend.purchased.length; i++) {
+   console.log(user.friend.purchased[i]);
+}
 
 
 // ### G. Functions can operate on objects
