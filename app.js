@@ -682,11 +682,15 @@ user.friend.age = 55;
 console.log(user.friend.age);
 
 // The friend has purchased "The One Ring". Use `.push()` to add "The One Ring" to the friend's `purchasedarray`.
-// 5. The friendhas purchased "A latte". Use .push()to add "A latte" to the friend's `purchasedarray`.
-// 6. Console.log just "A latte" from the friend's `purchasedarray`.
-
 user.friend.purchased.push("The One Ring");
 console.log(user.friend.purchased);
+
+// 5. The friendhas purchased "A latte". Use .push()to add "A latte" to the friend's `purchasedarray`.
+user.friend.purchased.push("A latte");
+console.log(user.friend.purchased);
+
+// 6. Console.log just "A latte" from the friend's `purchasedarray`.
+console.log(user.friend.purchased[1]);
 
 
 // ### F. Loops
