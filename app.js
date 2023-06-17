@@ -603,6 +603,7 @@ console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanut
 // Write in to the object the **key-value** pairs for name, email, age, and purchased. Set the value of purchased to an empty array `[]`. Set the other values to whatever you would like.
 
 const user = {
+   name: "Mike Chen",
    email: "mike@gmail.com",
    age: 50,
    purchased: []
@@ -709,34 +710,42 @@ for (let i = 0; i < user.friend.purchased.length; i++) {
 // ### G. Functions can operate on objects
 
 // Write a single function updateUserthat takes no parameters. When the function is run, it should:
-user.friend = {
-   name: "John Smith",
-   age: 21,
-   location: "New York",
-   purchased: [],
+// user.friend = {
+//    name: "John Smith",
+//    age: 21,
+//    location: "New York",
+//    purchased: [],
    
-   // start of single function added to the user object below
-   updateUser: function() {
-      user.friend.age++;
-   }
-   // end of single function added to the object
-}
+//    // start of single function added to the user object below
+//    updateUser: function() {
+//       user.friend.age++;
+//    }
+//    // end of single function added to the object
+// }
 
-// 1. it should increment the user's age by 1
-user.friend.updateUser();
-console.log(user.friend);
+// // 1. it should increment the user's age by 1
+// user.friend.updateUser();
+// console.log(user.friend);
 
-// 2. make the user's name uppercase
-user.friend.name = user.friend.name.toUpperCase();
-console.log(user.friend.name);
+// // 2. make the user's name uppercase
+// user.friend.name = user.friend.name.toUpperCase();
+// console.log(user.friend.name);
 
 // 3. The function does not need a return statement, it will merely modify the user object.
+function updateUser() {
+   user.age++;
+   user.name = user.name.toUpperCase();
+}
+updateUser();
 
 // Write a function oldAndLoudthat performs the exact same tasks as updateUser, but instead of hard-coding it to only work on our userobject, make it take a parameter person, and have it modify the object that is passed in as an argument when the function is called. Call your oldAndLoudfunction with useras the argument.
 
-/// ??????????
 
-
+function oldAndLoud(person) {
+   person.age++;
+   person.name = person.name.toUpperCase();
+}
+oldAndLoud(user);
 
 
 // # Requirements Complete! Hungry for More?
